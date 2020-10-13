@@ -2,7 +2,7 @@ import * as Api from "./apiRequest";
 import * as path from "./apiList";
 
 export const fetchUser = function (...params) {
-  return fetch('http://dummy.restapiexample.com/api/v1/employees');
+  return Api.getRequest('http://dummy.restapiexample.com/api/v1/employees');
 };
 
 export const userLogin = function (...params) {

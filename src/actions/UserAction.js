@@ -20,6 +20,7 @@ import {
       });
       try {
         const users = await fetchUser(params).then((res) => res);
+        console.log(users.data);
         dispatch({
           type: FETCH_USERS_SUCCESS,
           payload: users.data,
