@@ -1,11 +1,8 @@
-import { createStore, applyMiddleware } from 'redux';
-import thunkMiddleware from 'redux-thunk';
-import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly'; // this is for debugging with React-Native-Debugger, you may leave it out
+import { createStore, applyMiddleware } from "redux";
 import reducer from "./../reducers/";
+import thunk from "redux-thunk";
 
-export const store = createStore(
-    reducer,
-  composeWithDevTools(applyMiddleware(thunkMiddleware))
-);
-
-
+//const middlewares = [logger, thunk]; //for Debugging
+const middlewares = [thunk];
+const store = createStore(reducer, applyMiddleware(...middlewares));
+export default store;

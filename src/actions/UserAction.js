@@ -2,46 +2,18 @@ import {
     PENDING,
     ERROR,
     LOGIN_SUCCESS,
-    LOGOUT_SUCCESS,
-    SEND_EMAIL_SUCCESS,
-    SIGN_UP_SUCCESS,
-    RESEND_EMAIL_SUCCESS,
-    FETCH_USERS_SUCCESS,
-    FETCH_INTERNAL_USERS_SUCCESS,
-    FIND_USER_SUCCESS,
-    CLEAR_USER_SUCCESS,
-    FIND_USER_BY_ID_SUCCESS,
-    CREATE_USER_APPROVAL_SUCCESS,
-    FETCH_ORGANISATION_SUCCESS,
-    FETCH_CUSTOM_FIELD_BY_USERTYPE_SUCCESS,
+    LOGOUT_SUCCESS,   
+    FETCH_USERS_SUCCESS,  
+    FIND_USER_BY_ID_SUCCESS   
   } from "./types/index";
-  import { toast } from "react-toastify";
   import {
     userLogin,
-    userLogout,
-    userEmail,
-    userSignUp,
-    userResendEmail,
-    fetchUser,
-    userUpdate,
-    createUser,
-    fetchInternalUser,
-    findUser,
-    updateInternalUser,
-    deleteInternalUser,
-    fetchUserById,
-    updateApproval,
-    deactivateUser,
-    activateUser,
-    activateUserGroup,
-    deActivateUserGroup,
-    updateUserRole,
-    createGroup,
-    fetchOrganisation,
-    fetchCustomField,
+    userLogout,    
+    fetchUser,   
+    fetchUserById    
   } from "./../data/user";
   
-  export function FetchUser(params) {
+  export function FetchPage(params) {
     return async (dispatch) => {
       dispatch({
         type: PENDING,
@@ -57,8 +29,7 @@ import {
           type: ERROR,
           error: err.response,
         });
-        if (err.response && err.response.data)
-          toast.error(err.response.data.status.message);
+       
       }
     };
   }
@@ -79,8 +50,7 @@ import {
           type: ERROR,
           error: err.response,
         });
-        if (err.response && err.response.data)
-          toast.error(err.response.data.status.message);
+        
       }
     };
   }
@@ -102,8 +72,7 @@ import {
           type: ERROR,
           error: err.response,
         });
-        if (err.response && err.response.data)
-          toast.error(err.response.data.status.message);
+       
       }
     };
   }
@@ -119,19 +88,13 @@ import {
           type: LOGOUT_SUCCESS,
           payload: logout.data,
         });
-        localStorage.clear();
-        toast.error("User logout successfully");
-        window.location.assign("/login");
+       
       } catch (err) {
         dispatch({
           type: ERROR,
           error: err.message,
         });
-        if (err.response && err.response.data) {
-          localStorage.clear();
-          // toast.error(err.response.data.status.message)
-          window.location.assign("/login");
-        }
+       
       }
     };
   }
