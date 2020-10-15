@@ -6,7 +6,7 @@ export default class index extends Component{
     render(){  
         return(  
             <View>  
-                <Text>this is profile screen</Text>  
+                <Text>this is street pickup screen</Text>  
             </View>  
         )  
     }  
@@ -14,7 +14,7 @@ export default class index extends Component{
 index.navigationOptions={  
     tabBarIcon:({tintColor, focused})=>(  
         <Icon  
-            name={focused ? 'ios-person' : 'md-person'}  
+            name={focused ? 'ios-settings' : 'md-settings'}  
             color={tintColor}  
             size={25}  
         />  

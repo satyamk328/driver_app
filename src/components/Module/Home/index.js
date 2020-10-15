@@ -3,20 +3,20 @@ import {View,Text} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';  
 
 export default class index extends Component{  
-    render(){  
+    render() {  
         return(  
             <View>  
-                <Text>this is profile screen</Text>  
+                <Text>This is Home Screen</Text>  
             </View>  
         )  
     }  
 }  
 index.navigationOptions={  
-    tabBarIcon:({tintColor, focused})=>(  
-        <Icon  
-            name={focused ? 'ios-person' : 'md-person'}  
-            color={tintColor}  
-            size={25}  
-        />  
-    )  
+            tabBarIcon:({tintColor, focused})=>(  
+            <Icon  
+                name={focused ? 'ios-home' : 'md-home'}  
+                color={tintColor}  
+                size={25}  
+            />  
+        )  
 }  

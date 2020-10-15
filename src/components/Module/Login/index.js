@@ -1,25 +1,28 @@
 import React, { Component } from 'react'
-import { View, Button, StyleSheet } from 'react-native'
+import { View, Button, StyleSheet ,Text} from 'react-native'
 
-import { login } from '../../../utils/Utility'
+export default class index extends Component {
 
-export default class Login extends Component {
   constructor(props) {
     super(props);
     this.onLogin = this.onLogin.bind(this);
   }
 
   async onLogin() {
-    await login();
-    this.props.navigation.navigate('Dashboard');
+    this.props.navigation.navigate('Home');
   }
 
   render() {
     return (
       <View style={styles.base}>
+        <Text>Login Page</Text>
         <Button
           title='Login'
           onPress={this.onLogin}/>
+          <Button
+        title="Go to Password Forget"
+        onPress={() => this.props.navigation.navigate('Forgot Password')}
+      />
       </View>
     );
   }
