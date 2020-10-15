@@ -37,7 +37,7 @@ const Toptab = createMaterialTopTabNavigator();
 
 function TopTabNavigation() {
   return (
-    <Toptab.Navigator tabBarOptions={{ activeTintColor: 'white',  showIcon: true, showLabel:false, style: { backgroundColor:'red' }}}>
+    <Toptab.Navigator tabBarOptions={{ activeTintColor: 'white',  showIcon: true, showLabel:false, style: { backgroundColor:'black' }}}>
       <Toptab.Screen name="Home" component={HomeDrawer} />
       <Toptab.Screen name="Earning" component={EarningScreen} />
       <Toptab.Screen name="Profile" component={ProfileScreen} />
