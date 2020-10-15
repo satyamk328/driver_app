@@ -10,13 +10,4 @@ export default class index extends Component{
             </View>  
         )  
     }  
-}  
-index.navigationOptions={  
-    tabBarIcon:({tintColor, focused})=>(  
-        <Icon  
-            name={focused ? 'ios-settings' : 'md-settings'}  
-            color={tintColor}  
-            size={25}  
-        />  
-    )  
-}  
+} 

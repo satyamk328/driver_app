@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 //import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import Icon from 'react-native-vector-icons/FontAwesome'; 
 
 import HomeScreen from "../Module/Home";
 import EarningScreen from "../Module/Earning";
@@ -37,7 +38,29 @@ const Toptab = createMaterialTopTabNavigator();
 
 function TopTabNavigation() {
   return (
-    <Toptab.Navigator tabBarOptions={{ activeTintColor: 'white',  showIcon: true, showLabel:false, style: { backgroundColor:'black' }}}>
+    <Toptab.Navigator screenOptions={({ route }) => ({
+      tabBarIcon: ({ focused, color, size }) => {
+        let iconName;
+        if (route.name === 'Home') {
+          iconName = focused
+            ? 'home'
+            : 'home';
+        } else if (route.name === 'Earning') {
+          iconName = focused ? 'ios-list-box' : 'ios-list';
+        }else if (route.name === 'Profile') {
+          iconName = focused ? 'ios-list-box' : 'ios-list';
+        }else if (route.name === 'StreetPickup') {
+          iconName = focused ? 'ios-list-box' : 'ios-list';
+        }
+
+        // You can return any component that you like here!
+        return <Icon name={iconName} size={size} color={color} />;
+      },
+    })}
+    tabBarOptions={{
+      activeTintColor: 'tomato',
+      inactiveTintColor: 'gray',
+    }}>
       <Toptab.Screen name="Home" component={HomeDrawer} />
       <Toptab.Screen name="Earning" component={EarningScreen} />
       <Toptab.Screen name="Profile" component={ProfileScreen} />
