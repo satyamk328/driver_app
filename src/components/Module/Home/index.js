@@ -1,6 +1,6 @@
 import React, {Component} from 'react';  
 import {View,Text} from 'react-native';  
-import Icon from 'react-native-vector-icons/FontAwesome';  
+import Icon from 'react-native-vector-icons/Ionicons';  
 
 export default class index extends Component{  
     render() {  
@@ -15,5 +15,10 @@ export default class index extends Component{
             </View>  
         )  
     }  
+}  
+index.navigationOptions={  
+    tabBarIcon: ({ tintColor }) => (
+        <Icon name="home" size={30} color="#900" />
+      )  
 }  
  

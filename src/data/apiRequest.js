@@ -1,6 +1,7 @@
 import axios from "axios";
+import {AsyncStorage} from 'react-native';  
 
-//const token = localStorage.getItem("access_token");
+const token = await AsyncStorage.getItem("access_token");
 
 const axiosLoginConfig = {
   // Only for Login APi with clientId & securet Key

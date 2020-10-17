@@ -1,11 +1,12 @@
 import 'react-native-gesture-handler';
 import React from 'react';
+import { StyleSheet, Text, View, StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 //import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import Icon from 'react-native-vector-icons/FontAwesome'; 
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import HomeScreen from "../Module/Home";
 import EarningScreen from "../Module/Earning";
@@ -22,7 +23,7 @@ import SignUpScreen from "../Module/SignUp";
 import ForgotPassword from "../Module/ForgotPassword";
 
 const Drawer = createDrawerNavigator();
- 
+
 const HomeDrawer = () => {
   return (
     <Drawer.Navigator>
@@ -32,35 +33,29 @@ const HomeDrawer = () => {
     </Drawer.Navigator>
   );
 };
- 
+
 
 const Toptab = createMaterialTopTabNavigator();
 
 function TopTabNavigation() {
   return (
-    <Toptab.Navigator screenOptions={({ route }) => ({
-      tabBarIcon: ({ focused, color, size }) => {
-        let iconName;
-        if (route.name === 'Home') {
-          iconName = focused
-            ? 'home'
-            : 'home';
-        } else if (route.name === 'Earning') {
-          iconName = focused ? 'ios-list-box' : 'ios-list';
-        }else if (route.name === 'Profile') {
-          iconName = focused ? 'ios-list-box' : 'ios-list';
-        }else if (route.name === 'StreetPickup') {
-          iconName = focused ? 'ios-list-box' : 'ios-list';
-        }
-
-        // You can return any component that you like here!
-        return <Icon name={iconName} size={size} color={color} />;
+    <Toptab.Navigator tabBarOptions={{
+      showIcon: fasle,
+      activeTintColor: '#FFFFFF',
+      inactiveTintColor: '#F8F8F8',
+      style: {
+        backgroundColor: '#633689',
       },
-    })}
-    tabBarOptions={{
-      activeTintColor: 'tomato',
-      inactiveTintColor: 'gray',
-    }}>
+      labelStyle: {
+        textAlign: 'center',
+      },
+      indicatorStyle: {
+        borderBottomColor: '#87B56A',
+        borderBottomWidth: 2,
+      }
+    
+    }}
+    >
       <Toptab.Screen name="Home" component={HomeDrawer} />
       <Toptab.Screen name="Earning" component={EarningScreen} />
       <Toptab.Screen name="Profile" component={ProfileScreen} />
@@ -78,11 +73,12 @@ export default index = () => {
         <RootStack.Screen name="ManageSignUp" component={ManageSignUp} />
         <RootStack.Screen name="Login" component={LoginScreen} />
         <RootStack.Screen name="SignUp" component={SignUpScreen} />
-        <RootStack.Screen name="Home" component={TopTabNavigation} />
+        <RootStack.Screen name="Home" component={TopTabNavigation} options={{
+                headerShown: false
+            }}/>
         <RootStack.Screen name="Forgot Password" component={ForgotPassword} />
       </RootStack.Navigator>
     </NavigationContainer>
   );
 };
- 
- 
+
