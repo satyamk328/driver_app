@@ -1,6 +1,6 @@
 import React, {Component} from 'react';  
 import {View,Text} from 'react-native';  
-import Icon from 'react-native-vector-icons/FontAwesome';  
+import Icon from 'react-native-vector-icons/Ionicons';  
 
 export default class index extends Component{  
     render(){  
@@ -10,4 +10,14 @@ export default class index extends Component{
             </View>  
         )  
     }  
+}  
+
+index.navigationOptions={  
+    tabBarIcon:({tintColor, focused})=>(  
+        <Icon  
+            name={focused ? 'ios-settings' : 'md-settings'}  
+            color={tintColor}  
+            size={25}  
+        />  
+    )  
 }  

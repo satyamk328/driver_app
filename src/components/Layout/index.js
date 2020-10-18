@@ -28,8 +28,10 @@ const HomeDrawer = () => {
   return (
     <Drawer.Navigator>
       <Drawer.Screen name="Home" component={HomeScreen} />
-      <Drawer.Screen name="About" component={AboutScreen}
-      />
+      <Drawer.Screen name="Payment" component={AboutScreen}/>
+      <Drawer.Screen name="Settings" component={AboutScreen}/>
+      <Drawer.Screen name="About" component={AboutScreen}/>
+      <Drawer.Screen name="About" component={AboutScreen}/>
     </Drawer.Navigator>
   );
 };
@@ -39,23 +41,7 @@ const Toptab = createMaterialTopTabNavigator();
 
 function TopTabNavigation() {
   return (
-    <Toptab.Navigator tabBarOptions={{
-      showIcon: fasle,
-      activeTintColor: '#FFFFFF',
-      inactiveTintColor: '#F8F8F8',
-      style: {
-        backgroundColor: '#633689',
-      },
-      labelStyle: {
-        textAlign: 'center',
-      },
-      indicatorStyle: {
-        borderBottomColor: '#87B56A',
-        borderBottomWidth: 2,
-      }
-    
-    }}
-    >
+    <Toptab.Navigator >
       <Toptab.Screen name="Home" component={HomeDrawer} />
       <Toptab.Screen name="Earning" component={EarningScreen} />
       <Toptab.Screen name="Profile" component={ProfileScreen} />

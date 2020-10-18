@@ -17,8 +17,12 @@ export default class index extends Component{
     }  
 }  
 index.navigationOptions={  
-    tabBarIcon: ({ tintColor }) => (
-        <Icon name="home" size={30} color="#900" />
-      )  
+    tabBarIcon:({tintColor, focused})=>(  
+    <Icon  
+        name={focused ? 'ios-home' : 'md-home'}  
+        color={tintColor}  
+        size={25}  
+    />  
+)   
 }  
  
