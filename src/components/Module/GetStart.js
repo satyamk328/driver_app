@@ -110,7 +110,7 @@ export default function GetStart({navigation}) {
                     <Pagination index={index}></Pagination>
                 </View>
                 <View style={styles.buttonContainer}>
-                    <Button title="SignUp" onPress={(e) => navigation.navigate('ManageSignUp')}></Button>
+                    <Button title="Get Start" onPress={(e) => navigation.navigate('ManageSignUp')}></Button>
                 </View>
             </View>
         </>
