@@ -17,6 +17,7 @@ import StreetPickupScreen from "../Module/StreetPickup";
 import AboutScreen from "../Module/About";
 // stack
 
+import GetStart from "../Module/GetStart";
 import ManageSignUp from "../Module/ManageSignUp";
 import LoginScreen from "../Module/Login";
 import SignUpScreen from "../Module/SignUp";
@@ -56,6 +57,9 @@ export default index = () => {
   return (
     <NavigationContainer>
       <RootStack.Navigator>
+      <RootStack.Screen name="GetStart" component={GetStart} options={{
+                headerShown: false
+            }}/>
         <RootStack.Screen name="ManageSignUp" component={ManageSignUp} />
         <RootStack.Screen name="Login" component={LoginScreen} />
         <RootStack.Screen name="SignUp" component={SignUpScreen} />
