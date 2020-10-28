@@ -51,23 +51,23 @@ function TopTabNavigation() {
   );
 }
 
-const RootStack = createStackNavigator();
+const AuthStack = createStackNavigator();
 
 export default index = () => {
   return (
     <NavigationContainer>
-      <RootStack.Navigator>
-      <RootStack.Screen name="GetStart" component={GetStart} options={{
+      <AuthStack.Navigator>
+      <AuthStack.Screen name="GetStart" component={GetStart} options={{
                 headerShown: false
             }}/>
-        <RootStack.Screen name="ManageSignUp" component={ManageSignUp} />
-        <RootStack.Screen name="Login" component={LoginScreen} />
-        <RootStack.Screen name="SignUp" component={SignUpScreen} />
-        <RootStack.Screen name="Home" component={TopTabNavigation} options={{
+        <AuthStack.Screen name="ManageSignUp" component={ManageSignUp} />
+        <AuthStack.Screen name="Login" component={LoginScreen} />
+        <AuthStack.Screen name="SignUp" component={SignUpScreen} />
+        <AuthStack.Screen name="Home" component={TopTabNavigation} options={{
                 headerShown: false
             }}/>
-        <RootStack.Screen name="Forgot Password" component={ForgotPassword} />
-      </RootStack.Navigator>
+        <AuthStack.Screen name="Forgot Password" component={ForgotPassword} />
+      </AuthStack.Navigator>
     </NavigationContainer>
   );
 };
